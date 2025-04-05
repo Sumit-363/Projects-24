@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMOLED Black Webpage</title>
+  <style>
+    body {
+      background-color: #000000; /* AMOLED black background */
+      color: #FFFFFF; /* White text for better visibility */
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .search-bar {
+      width: 19%;
+      margin: 120px auto;
+      padding: 10px;
+      background-color: #333333; /* Dark gray for the search bar */
+      border-radius: 20px;
+      display: flex;
+    }
+    .search-bar input[type="text"] {
+      flex: 1;
+      padding: 5px;
+      border: none;
+      background: none;
+      color: #FFFFFF;
+      font-size: 16px;
+    }
+    .search-bar input[type="submit"] {
+      padding: 5px 15px;
+      border: none;
+      background-color: #FF0000; /* Red color for the search button */
+      color: #FFFFFF;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="search-bar">
+    <form id="searchForm" action="https://www.youtube.com/results" method="get" target="_blank">
+      <input type="text" id="searchQuery" name="search_query" placeholder="Search on YouTube">
+      <input type="submit" value="Search">
+    </form>
+  </div>
+
+  <script>
+    // Function to submit the form on pressing Enter key
+    document.getElementById('searchQuery').addEventListener('keypress', function(event) {
+      if (event.key === 'Enter') {
+        event.preventDefault(); // Prevent form submission
+        document.getElementById('searchForm').submit(); // Submit the form
+      }
+    });
+  </script>
+</body>
+</html>
